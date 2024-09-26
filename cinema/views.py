@@ -32,6 +32,6 @@ def movie_detail_retrieve_update_delete(request: Request, pk: int) -> Response:
         serializer.is_valid(raise_exception=True)
         serializer.save()
         return Response(serializer.data, status=status.HTTP_200_OK)
-    else:
-        movie.delete()
-        return Response(status=status.HTTP_204_NO_CONTENT)
+
+    movie.delete()
+    return Response(status=status.HTTP_204_NO_CONTENT)
